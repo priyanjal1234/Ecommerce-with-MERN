@@ -5,12 +5,7 @@ import { toast } from "react-toastify";
 import resetSchema from "../schemas/resetSchema"; // Assume this schema is already defined and imported
 
 const ResetPassword = () => {
-  let location = useLocation()
-
-  const searchParams = new URLSearchParams(location.search)
-  const token = searchParams.get("token")
-
-  console.log(token)
+  
   const [password, setPassword] = useState("");
   const [error, setError] = useState(""); // State for validation error
   let navigate = useNavigate();
