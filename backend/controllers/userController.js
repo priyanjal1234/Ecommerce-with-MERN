@@ -128,7 +128,7 @@ module.exports.forgotPasswordController = async function (req, res) {
     user.resetPasswordToken = resettoken;
     await user.save();
 
-    let reseturl = `https://ecommerce-with-mern-frontend.onrender.com/reset-password?token=${resettoken}`;
+    let reseturl = `https://ecommerce-with-mern-frontend.onrender.com/reset-password`;
 
     let transporter = nodemailer.createTransport({
       service: "gmail",
