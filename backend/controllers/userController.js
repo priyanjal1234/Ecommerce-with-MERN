@@ -28,6 +28,9 @@ module.exports.registerController = async function (req, res) {
     let token = jwt.sign({ name, email }, process.env.JWT_KEY);
     res.cookie("token", token, {
       maxAge: 10 * 365 * 24 * 60 * 60 * 1000,
+      secure: process.env.NODE_ENV === 'production',
+      httpOnly: true,
+      sameSite: 'None'
     });
     res.status(201).json({ message: "Registration Successfull", user });
   } catch (error) {
@@ -52,7 +55,11 @@ module.exports.loginController = async function (req, res) {
       if (result) {
         let token = jwt.sign({ email, name: user.name }, process.env.JWT_KEY);
         res.cookie("token", token, {
-          maxAge: 10 * 365 * 24 * 60 * 60 * 1000,
+          
+        maxAge: 10 * 365 * 24 * 60 * 60 * 1000,
+        secure: process.env.NODE_ENV === 'production',
+        httpOnly: true,
+        sameSite: 'None'
         });
         return res.status(200).json({ message: "You are logged in" });
       } else {
