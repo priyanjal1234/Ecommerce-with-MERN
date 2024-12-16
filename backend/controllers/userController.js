@@ -145,7 +145,7 @@ module.exports.forgotPasswordController = async function (req, res) {
       html: `
           <p>Hello,</p>
           <p>You requested to reset your password. Please click on the link below to reset it:</p>
-          ${reseturl}
+          <a href = ${reseturl} >${reseturl} </a>
         `,
     };
 
