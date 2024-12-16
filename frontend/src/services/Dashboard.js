@@ -3,7 +3,7 @@ import api from "./api";
 class DashboardService {
   constructor() {
     this.api = api;
-    this.baseUrl = "http://localhost:3000/api";
+    this.baseUrl = "https://ecommerce-with-mern-backend.onrender.com/api";
   }
 
   async getAnalytics() {
