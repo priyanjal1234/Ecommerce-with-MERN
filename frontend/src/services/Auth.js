@@ -3,7 +3,7 @@ import api from "./api";
 class AuthService {
   constructor() {
     this.api = api;
-    this.baseUrl = "https://ecommerce-with-mern-backend.onrender.com0/api";
+    this.baseUrl = "https://ecommerce-with-mern-backend.onrender.com/api";
   }
 
   async createAccount(register) {
