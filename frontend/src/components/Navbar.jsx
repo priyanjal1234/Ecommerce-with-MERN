@@ -2,18 +2,13 @@ import { Package, ShoppingCart } from "lucide-react";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
-import { setCartNumber } from "../redux/reducers/CartReducer";
 
 
 const Navbar = () => {
   let { user } = useSelector((state) => state.user);
 
   let { cartNumber } = useSelector((state) => state.cart);
-  let dispatch = useDispatch()
-
-  useEffect(() => {
-    dispatch(setCartNumber(0))
-  },[])
+ 
 
   const navMidData = [
     "Electronics",
